@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #1a1a1a;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+}
+
+@layer components {
+  .carousel-container {
+    @apply relative overflow-hidden;
+  }
+  
+  .carousel-track {
+    @apply flex gap-2 transition-transform duration-300 ease-out;
+  }
+  
+  .recipe-card {
+    @apply relative flex-shrink-0 w-64 h-36 rounded-lg overflow-hidden cursor-pointer transition-all duration-300 hover:scale-105 hover:z-10;
+  }
+  
+  .recipe-card-overlay {
+    @apply absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300;
+  }
+}
